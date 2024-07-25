@@ -102,7 +102,7 @@ void ListObjectsV2Request::AddQueryStringParameters(URI& uri) const
 
     if(m_fetchOwnerHasBeenSet)
     {
-      ss << m_fetchOwner;
+      ss << m_fetchOwner? "true" : "false";
       uri.AddQueryStringParameter("fetch-owner", ss.str());
       ss.str("");
     }
